@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 50% 5%;
+    --foreground: 0 0% 100%;
+    --card: 216 45% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 216 45% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 176 100% 42%;
+    --primary-foreground: 216 50% 5%;
+    --secondary: 216 30% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 30% 15%;
+    --muted-foreground: 216 20% 60%;
+    --accent: 176 100% 42%;
+    --accent-foreground: 216 50% 5%;
+    --destructive: 355 70% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 176 50% 20%;
+    --input: 216 30% 15%;
+    --ring: 176 100% 42%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-navy text-white font-sans antialiased;
+    overflow-x: hidden;
+  }
+  
+  ::selection {
+    background: rgba(0, 212, 200, 0.3);
+    color: white;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-teal to-teal-light bg-clip-text text-transparent;
+  }
+  
+  .glow-border {
+    @apply border border-teal/20;
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 40px rgba(0, 212, 200, 0.3);
+  }
+  
+  .card-medical {
+    @apply bg-navy-light/80 backdrop-blur-sm rounded-2xl p-8 glow-border;
+  }
+  
+  .btn-primary {
+    @apply bg-teal text-navy font-semibold px-8 py-4 rounded-lg 
+           transition-all duration-300 hover:brightness-110 hover:scale-[1.02]
+           shadow-glow;
+  }
+  
+  .btn-secondary {
+    @apply border border-teal text-teal font-semibold px-8 py-4 rounded-lg 
+           transition-all duration-300 hover:bg-teal/10;
+  }
+  
+  .section-label {
+    @apply text-teal font-mono text-sm tracking-[0.2em] uppercase mb-4;
+  }
+  
+  .heading-display {
+    @apply font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight;
+  }
+  
+  .heading-section {
+    @apply font-display text-3xl md:text-4xl font-semibold text-white;
+  }
+  
+  .body-text {
+    @apply text-silver-dark text-base md:text-lg leading-relaxed;
+  }
+  
+  .stat-number {
+    @apply font-mono text-4xl md:text-5xl font-bold text-teal;
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 212, 200, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 212, 200, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(0, 212, 200, 0.5);
+  }
+  
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00D4C8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #33E0D6;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
